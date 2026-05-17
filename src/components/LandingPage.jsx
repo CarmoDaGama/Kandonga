@@ -234,18 +234,40 @@ const SvgHeart = () => (
   </svg>
 );
 
+// --- Novos Ícones Específicos para a Secção de Produtos Financeiros ---
+const SvgFlower = () => (
+  <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: '10px', color: '#e11d48' }}>
+    <circle cx="12" cy="12" r="3" />
+    <path d="M12 2a3 3 0 0 0-3 3v1a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z" />
+    <path d="M12 16a3 3 0 0 0-3 3v2a3 3 0 0 0 6 0v-2a3 3 0 0 0-3-3z" />
+    <path d="M2 12a3 3 0 0 0 3 3h2a3 3 0 0 0 0-6H5a3 3 0 0 0-3 3z" />
+    <path d="M17 12a3 3 0 0 0 3 3h2a3 3 0 0 0 0-6h-2a3 3 0 0 0-3 3z" />
+  </svg>
+);
+
+const SvgLightbulb = () => (
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: '10px', color: 'var(--kangonga-secondary)' }}>
+    <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A5 5 0 0 0 8 8c0 1 .4 2.5 1.5 3.5.7.8 1.3 1.5 1.5 2.5" />
+    <path d="M9 18h6" />
+    <path d="M10 22h4" />
+  </svg>
+);
+
+const SvgStarFilled = () => (
+  <svg viewBox="0 0 24 24" width="18" height="18" fill="var(--kangonga-secondary)" style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: '2px' }}>
+    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+  </svg>
+);
+
 function LandingPage({ onNavigate }) {
   // --- Estados do Header ---
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // --- Estados de Pricing (Planos) ---
-  const [billingCycle, setBillingCycle] = useState('monthly'); // 'monthly' ou 'yearly'
+  // --- Estados de FAQ Accordion ---
+  const [activeFaq, setActiveFaq] = useState(null);
 
   // --- Estados da Calculadora À La Carte ---
   const [selectedServices, setSelectedServices] = useState([]);
-
-  // --- Estados de FAQ Accordion ---
-  const [activeFaq, setActiveFaq] = useState(null);
 
   // --- Estados dos Modais ---
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
@@ -467,7 +489,7 @@ function LandingPage({ onNavigate }) {
           <div className="lp-problem-card">
             <SvgCross />
             <h4>Sem Histórico Financeiro</h4>
-            <p>Os bancos exigem extratos e registos formais que o seu telemóvel atual não cria de forma automática. O seu esforço fica invisível para o sistema.</p>
+            <p>Os bancos exigirem extratos e registos formais que o seu telemóvel atual não cria de forma automática. O seu esforço fica invisível para o sistema.</p>
           </div>
           <div className="lp-problem-card">
             <SvgCross />
@@ -701,99 +723,254 @@ function LandingPage({ onNavigate }) {
 
       {/* 
         ========================================
-        8. SERVICES / PRICING & ESTIMATOR (Serviços & Preços)
+        8. PRODUCTS / SERVICES & CREDIT ACCORDANCE BY PROFILE
         ======================================== 
       */}
       <section className="lp-pricing" id="servicos">
-        <div style={{ textAlign: 'center', padding: '0 24px' }}>
-          <h2 className="lp-section-title">Planos flexíveis para qualquer escala</h2>
+        <div style={{ textAlign: 'center', padding: '0 24px', marginBottom: '40px' }}>
+          <h2 className="lp-section-title">Produtos Financeiros de Angola</h2>
           <p className="lp-section-subtitle">
-            Comece de forma gratuita e adicione potencialidades avançadas à medida que a sua faturação expandir.
+            Encontre o Crédito Que Cabe no Seu Perfil
           </p>
         </div>
 
-        {/* Alternador de Preço Mensal / Anual */}
-        <div className="lp-billing-toggle">
-          <span className={`lp-toggle-label ${billingCycle === 'monthly' ? 'active' : ''}`} onClick={() => setBillingCycle('monthly')}>
-            Faturação Mensal
-          </span>
-          <div className={`lp-toggle-switch ${billingCycle === 'yearly' ? 'yearly' : ''}`} onClick={() => setBillingCycle(billingCycle === 'monthly' ? 'yearly' : 'monthly')}>
-            <div className="lp-toggle-handle"></div>
-          </div>
-          <span className={`lp-toggle-label ${billingCycle === 'yearly' ? 'active' : ''}`} onClick={() => setBillingCycle('yearly')}>
-            Faturação Anual <span className="lp-discount-badge">Poupa 20%</span>
-          </span>
+        <div className="lp-narrative-box">
+          <blockquote className="lp-blockquote">
+            "Cada empreendedor tem uma história, e cada história merece a oportunidade certa."
+          </blockquote>
+          <p className="lp-narrative-text" style={{ fontWeight: '600', color: 'var(--kangonga-primary)' }}>
+            No Kangonga, não acreditamos em portões fechados — acreditamos em portas abertas por meio do seu histórico.
+          </p>
+          <p className="lp-narrative-text">
+            Através do registo automático das suas vendas e do seu histórico financeiro gerado no app, a nossa plataforma analisa o seu perfil e indica quais os produtos financeiros em Angola aos quais você é elegível e pode concorrer com confiança.
+          </p>
         </div>
 
-        {/* Tabela de Planos */}
-        <div className="lp-pricing-grid">
-          {/* Plano Básico */}
-          <div className="lp-pricing-card">
-            <h4 className="lp-pricing-name">Básico (Grátis)</h4>
-            <p className="lp-pricing-desc">Perfeito para quem está a começar a registar os primeiros passos do negócio.</p>
-            <div className="lp-pricing-price">
-              <span className="lp-price-val">0 Kz</span>
-              <span className="lp-price-period">/mês</span>
+        <h3 className="lp-profile-title">Como Funciona a Adequação por Perfil</h3>
+
+        <div className="lp-table-wrapper">
+          <table className="lp-custom-table">
+            <thead>
+              <tr>
+                <th>Perfil do Empreendedor</th>
+                <th>Histórico Gerado no Kangonga</th>
+                <th>Produtos Financeiros Adequados</th>
+                <th>Exemplos em Angola</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="lp-profile-name-cell">
+                  Microempreendedor Inicial
+                  <span className="lp-profile-desc-tag">vendas diárias, sem registos</span>
+                </td>
+                <td>1–3 meses de vendas registadas, fluxo de caixa básico</td>
+                <td>
+                  <ul className="lp-cell-list">
+                    <li>Microcrédito até 150.000 Kz</li>
+                    <li>Fundos de apoio jovem empreendedor</li>
+                    <li>Empréstimo de stock inicial</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul className="lp-cell-list">
+                    <li>INAPEM – Microcrédito</li>
+                    <li>Banco BAI – Crédito Jovem</li>
+                    <li>Fundação Calouste Gulbenkian – Apoio às Mulheres [1]</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td className="lp-profile-name-cell">
+                  Pequeno Negócio Estável
+                  <span className="lp-profile-desc-tag">2+ anos, vendas consistentes</span>
+                </td>
+                <td>6–12 meses de histórico, lucro positivo</td>
+                <td>
+                  <ul className="lp-cell-list">
+                    <li>Crédito à exploração</li>
+                    <li>Financiamento de equipamento</li>
+                    <li>Linha de capital de giro</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul className="lp-cell-list">
+                    <li>Banco Millenium Atlantico – Crédito PME</li>
+                    <li>BPC – Linha de Financiamento Produtivo</li>
+                    <li>INAPEM – Formalização + Crédito</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td className="lp-profile-name-cell">
+                  Negócio em Crescimento
+                  <span className="lp-profile-desc-tag">faturação mensal &gt;500.000 Kz</span>
+                </td>
+                <td>12+ meses, relatórios completos, score ≥650</td>
+                <td>
+                  <ul className="lp-cell-list">
+                    <li>Crédito de investimento</li>
+                    <li>Linhas de expansão</li>
+                    <li>Parcerias com fundos de impacto</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul className="lp-cell-list">
+                    <li>BFA – Crédito Empresarial</li>
+                    <li>Fundação "Angola para o Futuro"</li>
+                    <li>Banca de Investimento – PMEs</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td className="lp-profile-name-cell">
+                  Empreendedora Mulher
+                  <span className="lp-profile-desc-tag">qualquer fase</span>
+                </td>
+                <td>Qualquer histórico registado no app</td>
+                <td>
+                  <ul className="lp-cell-list">
+                    <li>Crédito preferencial para mulheres</li>
+                    <li>Fundos com taxa reduzida</li>
+                    <li>Mentoria + financiamento combinado</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul className="lp-cell-list">
+                    <li>Programa "Mulheres Empreendedoras" – INAPEM</li>
+                    <li>BAI Mulher – Crédito com taxas diferenciadas</li>
+                    <li>UN Women Angola – Fundo de Impacto [1]</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        {/* Ênfase Especial: Mulheres Empreendedoras */}
+        <div className="lp-women-emphasis">
+          <div className="lp-women-header">
+            <SvgFlower />
+            <h3>Ênfase Especial: Mulheres Empreendedoras</h3>
+          </div>
+          
+          <blockquote className="lp-women-quote">
+            "Angola cresce quando as mulheres empreendem. E quando elas crescem, toda a comunidade prospera."
+          </blockquote>
+
+          <div className="lp-women-grid">
+            <div>
+              <p className="lp-narrative-text">
+                Sabemos que mulheres empreendedoras enfrentam barreiras adicionais: menos acesso a garantias, redes mais limitadas, e estereótipos que subestimam o seu potencial.
+              </p>
+              <p className="lp-narrative-text" style={{ fontWeight: '600' }}>
+                Por isso, no Kangonga, valorizamos especialmente o perfil das mulheres e trabalhamos com instituições que oferecem:
+              </p>
+              <ul className="lp-women-bullets">
+                <li>Taxas de juro reduzidas para mulheres (até 30% abaixo do mercado)</li>
+                <li>Garantia social em vez de garantias bancárias (para micro e pequenos negócios)</li>
+                <li>Mentoria gratuita + acesso a redes de empreendedoras</li>
+                <li>Processos mais ágeis e menos burocráticos</li>
+              </ul>
             </div>
-            <ul className="lp-pricing-features">
-              <li><div className="lp-pricing-check"><SvgCheck /></div> POS simplificado</li>
-              <li><div className="lp-pricing-check"><SvgCheck /></div> Histórico financeiro básico</li>
-              <li><div className="lp-pricing-check"><SvgCheck /></div> 1 telemóvel ligado</li>
-              <li><div className="lp-pricing-check"><SvgCheck /></div> Score financeiro analítico</li>
-              <li className="disabled"><div className="lp-pricing-check"><SvgCheck /></div> Exportação ilimitada PDF/Excel</li>
-              <li className="disabled"><div className="lp-pricing-check"><SvgCheck /></div> Consultoria corporativa</li>
-            </ul>
-            <a href="#baixar" className="lp-btn lp-btn-secondary">Começar Grátis</a>
+
+            <div>
+              <h4 style={{ marginBottom: '16px', fontWeight: '800', color: '#be123c', fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Programas disponíveis:</h4>
+              <div className="lp-programs-table-container">
+                <table className="lp-programs-table">
+                  <thead>
+                    <tr>
+                      <th>Programa</th>
+                      <th>Instituição</th>
+                      <th>Valor Máximo</th>
+                      <th>Benefício Especial</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style={{ fontWeight: '700' }}>Mulheres Empreendedoras</td>
+                      <td>INAPEM</td>
+                      <td className="lp-women-badge-value">300.000 Kz</td>
+                      <td>Mentoria + crédito combinado [1]</td>
+                    </tr>
+                    <tr>
+                      <td style={{ fontWeight: '700' }}>BAI Mulher</td>
+                      <td>Banco BAI</td>
+                      <td className="lp-women-badge-value">500.000 Kz</td>
+                      <td>Taxas 20% mais baixas</td>
+                    </tr>
+                    <tr>
+                      <td style={{ fontWeight: '700' }}>Fundo de Impacto Mulher</td>
+                      <td>UN Women Angola</td>
+                      <td className="lp-women-badge-value">1.000.000 Kz</td>
+                      <td>Para negócios liderados por mulheres</td>
+                    </tr>
+                    <tr>
+                      <td style={{ fontWeight: '700' }}>Microcrédito Feminino</td>
+                      <td>Banco Krad</td>
+                      <td className="lp-women-badge-value">200.000 Kz</td>
+                      <td>Sem garantias, só histórico Kangonga</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
 
-          {/* Plano Pro (Destaque) */}
-          <div className="lp-pricing-card featured">
-            <div className="lp-pricing-featured-label">Mais Popular</div>
-            <h4 className="lp-pricing-name">Pro</h4>
-            <p className="lp-pricing-desc">A melhor opção para comerciantes que precisam exportar relatórios frequentes.</p>
-            <div className="lp-pricing-price">
-              <span className="lp-price-val">
-                {billingCycle === 'monthly' ? '1.500 Kz' : '1.200 Kz'}
+          {/* Testemunho Especial da Ana C. */}
+          <div className="lp-women-testimonial-card">
+            <p>
+              "Antes, os bancos diziam 'não' porque não tinha documentos. Com o Kangonga, o meu histórico falou por mim. Hoje tenho crédito para expandir a minha costura — e sou uma das 2.000 mulheres que já construíram o seu futuro com Kangonga."
+            </p>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px' }}>
+              <span className="lp-women-testimonial-author">
+                — Ana C., costureira, Benguela
               </span>
-              <span className="lp-price-period">/mês {billingCycle === 'yearly' && '(cobrado anualmente)'}</span>
+              <div style={{ color: 'var(--kangonga-secondary)', display: 'flex', gap: '4px' }}>
+                <SvgStarFilled /><SvgStarFilled /><SvgStarFilled /><SvgStarFilled /><SvgStarFilled />
+              </div>
             </div>
-            <ul className="lp-pricing-features">
-              <li><div className="lp-pricing-check"><SvgCheck /></div> Todo o plano básico</li>
-              <li><div className="lp-pricing-check"><SvgCheck /></div> Relatórios avançados</li>
-              <li><div className="lp-pricing-check"><SvgCheck /></div> Até 3 telemóveis ligados</li>
-              <li><div className="lp-pricing-check"><SvgCheck /></div> Exportação ilimitada PDF/Excel</li>
-              <li><div className="lp-pricing-check"><SvgCheck /></div> Suporte prioritário no WhatsApp</li>
-              <li className="disabled"><div className="lp-pricing-check"><SvgCheck /></div> Conexão direta bancária premium</li>
-            </ul>
-            <button onClick={() => onNavigate('login')} className="lp-btn lp-btn-primary">Escolher Pro</button>
+          </div>
+        </div>
+
+        {/* Como descobrir Qual Produto É Para Si? */}
+        <div className="lp-discover-container">
+          <h3 className="lp-discover-title">
+            <SvgLightbulb /> Como descobrir Qual Produto É Para Si?
+          </h3>
+          
+          <div className="lp-discover-steps">
+            <div className="lp-discover-step-card">
+              <div className="lp-discover-step-num">1</div>
+              <p>Baixe o app Kangonga (gratuito)</p>
+            </div>
+            <div className="lp-discover-step-card">
+              <div className="lp-discover-step-num">2</div>
+              <p>Registe as suas vendas (online ou offline)</p>
+            </div>
+            <div className="lp-discover-step-card">
+              <div className="lp-discover-step-num">3</div>
+              <p>Gere o seu histórico financeiro automaticamente</p>
+            </div>
+            <div className="lp-discover-step-card">
+              <div className="lp-discover-step-num">4</div>
+              <p>Receba o seu Score Kangonga (0–1000)</p>
+            </div>
+            <div className="lp-discover-step-card">
+              <div className="lp-discover-step-num">5</div>
+              <p>Veja a lista personalizada de produtos aos quais é elegível</p>
+            </div>
           </div>
 
-          {/* Plano Premium */}
-          <div className="lp-pricing-card">
-            <h4 className="lp-pricing-name">Premium</h4>
-            <p className="lp-pricing-desc">Indicado para PMEs estruturadas que buscam captação imediata de crédito.</p>
-            <div className="lp-pricing-price">
-              <span className="lp-price-val">
-                {billingCycle === 'monthly' ? '5.000 Kz' : '4.000 Kz'}
-              </span>
-              <span className="lp-price-period">/mês {billingCycle === 'yearly' && '(cobrado anualmente)'}</span>
-            </div>
-            <ul className="lp-pricing-features">
-              <li><div className="lp-pricing-check"><SvgCheck /></div> Todo o plano Pro</li>
-              <li><div className="lp-pricing-check"><SvgCheck /></div> Dispositivos ilimitados</li>
-              <li><div className="lp-pricing-check"><SvgCheck /></div> Conexão direta bancária premium</li>
-              <li><div className="lp-pricing-check"><SvgCheck /></div> Gestão empresarial e alertas</li>
-              <li><div className="lp-pricing-check"><SvgCheck /></div> Consultoria estratégica</li>
-              <li><div className="lp-pricing-check"><SvgCheck /></div> Prioridade máxima em financiamento</li>
-            </ul>
-            <button onClick={() => onNavigate('login')} className="lp-btn lp-btn-secondary">Escolher Premium</button>
+          <div className="lp-discover-footer-quote">
+            "Não é sobre ter documentos perfeitos. É sobre ter um histórico real."
           </div>
         </div>
 
         {/* 
-          CALCULADORA À LA CARTE INTELIGENTE
+          CALCULADORA À LA CARTE INTELIGENTE (Mantida para Interatividade Máxima)
         */}
-        <div className="lp-calculator-container">
+        <div className="lp-calculator-container" style={{ marginTop: '80px' }}>
           <div className="lp-calc-header">
             <h3>Precisa de suporte personalizado à la carte?</h3>
             <p>Marque os serviços adicionais pontuais que deseja e simule na hora o investimento estimado total para o seu projeto.</p>

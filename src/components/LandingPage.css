@@ -1906,3 +1906,389 @@
         text-align: center;
     }
 }
+
+/* ==========================================================================
+   NÚCLEO ESTÉTICO: PRODUTOS FINANCEIROS DE ANGOLA & MULHERES EMPREENDEDORAS
+   ========================================================================== */
+.lp-narrative-box {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    padding: 0 24px;
+}
+
+.lp-blockquote {
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--kangonga-primary);
+    font-style: italic;
+    margin: 0 auto 24px auto;
+    line-height: 1.5;
+    position: relative;
+    padding: 0 30px;
+    border: none;
+    background: transparent;
+}
+
+.lp-blockquote::before {
+    content: "“";
+    font-size: 4rem;
+    position: absolute;
+    left: -10px;
+    top: -20px;
+    opacity: 0.15;
+    color: var(--kangonga-primary);
+    font-family: serif;
+}
+
+.lp-blockquote::after {
+    content: "”";
+    font-size: 4rem;
+    position: absolute;
+    right: -10px;
+    bottom: -30px;
+    opacity: 0.15;
+    color: var(--kangonga-primary);
+    font-family: serif;
+}
+
+.lp-narrative-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--kangonga-text-muted);
+    margin-bottom: 16px;
+}
+
+.lp-profile-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--kangonga-dark);
+    margin: 40px 0 24px 0;
+    text-align: center;
+}
+
+/* Tabela de Perfis Responsiva */
+.lp-table-wrapper {
+    overflow-x: auto;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+    border: 1px solid var(--kangonga-border);
+    margin: 20px auto 60px auto;
+    max-width: 1200px;
+}
+
+.lp-custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    min-width: 900px;
+}
+
+.lp-custom-table th {
+    background-color: var(--kangonga-soft-bg);
+    color: var(--kangonga-dark);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 18px 24px;
+    border-bottom: 2px solid var(--kangonga-border);
+}
+
+.lp-custom-table td {
+    padding: 22px 24px;
+    border-bottom: 1px solid var(--kangonga-border);
+    vertical-align: top;
+    font-size: 0.95rem;
+    color: var(--kangonga-text-main);
+    line-height: 1.6;
+}
+
+.lp-custom-table tr:last-child td {
+    border-bottom: none;
+}
+
+.lp-custom-table tr:hover td {
+    background-color: var(--kangonga-soft-bg);
+}
+
+.lp-profile-name-cell {
+    font-weight: 800;
+    color: var(--kangonga-primary);
+    font-size: 1.05rem;
+}
+
+.lp-profile-desc-tag {
+    font-size: 0.75rem;
+    display: block;
+    background-color: var(--kangonga-light-mint);
+    color: var(--kangonga-primary);
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-top: 8px;
+    font-weight: 700;
+    width: fit-content;
+}
+
+.lp-cell-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lp-cell-list li {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 8px;
+}
+
+.lp-cell-list li::before {
+    content: "•";
+    color: var(--kangonga-secondary);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+/* Ênfase especial em Mulheres Empreendedoras */
+.lp-women-emphasis {
+    background: linear-gradient(135deg, #ffffff 0%, #fff5f6 100%);
+    border: 2px solid #ffe4e6;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 15px 40px rgba(225, 29, 72, 0.03);
+    margin: 60px auto;
+    max-width: 1200px;
+}
+
+.lp-women-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.lp-women-header h3 {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #e11d48;
+    margin: 0;
+}
+
+.lp-women-quote {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #be123c;
+    font-style: italic;
+    margin: 0 0 24px 0;
+    line-height: 1.5;
+    border-left: 4px solid #f43f5e;
+    padding-left: 20px;
+    background: transparent;
+}
+
+.lp-women-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.lp-women-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.lp-women-bullets li {
+    position: relative;
+    padding-left: 26px;
+    font-size: 1rem;
+    margin-bottom: 12px;
+    color: var(--kangonga-text-main);
+    line-height: 1.5;
+}
+
+.lp-women-bullets li::before {
+    content: "✓";
+    color: #e11d48;
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    font-size: 1rem;
+}
+
+/* Tabela de Programas de Mulheres */
+.lp-programs-table-container {
+    overflow-x: auto;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(225, 29, 72, 0.02);
+    border: 1px solid #ffe4e6;
+}
+
+.lp-programs-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 450px;
+}
+
+.lp-programs-table th {
+    background-color: #fff1f2;
+    color: #9f1239;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 2px solid #ffe4e6;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.lp-programs-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #fff1f2;
+    font-size: 0.85rem;
+    color: var(--kangonga-text-main);
+}
+
+.lp-programs-table tr:last-child td {
+    border-bottom: none;
+}
+
+.lp-women-badge-value {
+    font-weight: 800;
+    color: #be123c;
+}
+
+/* Novo Card de Testemunho Feminino */
+.lp-women-testimonial-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 28px;
+    border: 1px solid #ffe4e6;
+    box-shadow: 0 10px 30px rgba(225, 29, 72, 0.01);
+    margin-top: 40px;
+}
+
+.lp-women-testimonial-card p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--kangonga-text-main);
+    font-style: italic;
+    margin-bottom: 16px;
+}
+
+.lp-women-testimonial-author {
+    font-weight: 700;
+    color: var(--kangonga-dark);
+}
+
+/* Como Descobrir Qual Produto é Para Si */
+.lp-discover-container {
+    background-color: var(--kangonga-dark);
+    color: #ffffff;
+    border-radius: 24px;
+    padding: 40px;
+    margin: 40px auto 80px auto;
+    max-width: 1200px;
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+}
+
+.lp-discover-title {
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+.lp-discover-steps {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    margin-bottom: 35px;
+}
+
+.lp-discover-step-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.lp-discover-step-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-4px);
+}
+
+.lp-discover-step-num {
+    width: 32px;
+    height: 32px;
+    background-color: var(--kangonga-secondary);
+    color: var(--kangonga-dark);
+    font-weight: 900;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px auto;
+    font-size: 1rem;
+}
+
+.lp-discover-step-card p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.4;
+    margin: 0;
+}
+
+.lp-discover-footer-quote {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--kangonga-secondary);
+    font-style: italic;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 25px;
+}
+
+/* Responsividade Adicional para Tabelas */
+@media (max-width: 992px) {
+    .lp-women-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .lp-discover-steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .lp-discover-steps {
+        grid-template-columns: 1fr;
+    }
+    
+    .lp-women-emphasis {
+        padding: 24px;
+    }
+    
+    .lp-discover-container {
+        padding: 24px;
+    }
+    
+    .lp-discover-title {
+        font-size: 1.3rem;
+    }
+    
+    .lp-blockquote {
+        font-size: 1.25rem;
+    }
+}
+
