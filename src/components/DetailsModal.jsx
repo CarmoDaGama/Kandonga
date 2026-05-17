@@ -351,7 +351,7 @@ function DetailsModal({ setView }) {
                 <circle cx="120" cy="120" r="90" fill="none" stroke="#a3e635" strokeWidth="14" strokeDasharray="565.48" strokeDashoffset="89" strokeLinecap="round" transform="rotate(-90 120 120)"></circle>
               </svg>
               <div style={{ position: 'absolute', textAlign: 'center' }}>
-                <div style={{ fontSize: '48px', fontWeight: '700', color: 'var(--text-primary)' }}>842</div>
+                <div style={{ fontSize: '48px', fontWeight: '700', color: 'var(--text-primary)' }}>88</div>
                 <div style={{ fontSize: '11px', fontWeight: '600', color: '#a3e635', letterSpacing: '1px' }}>EXCELENTE</div>
               </div>
             </div>
