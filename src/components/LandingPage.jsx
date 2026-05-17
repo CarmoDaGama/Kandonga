@@ -50,7 +50,7 @@ function LandingPage({ onNavigate }) {
               Milhares de negócios em Angola existem… <br/> mas ninguém os vê.
             </h1>
             <p style={{ fontSize: '18px', opacity: 0.9, marginBottom: '40px', lineHeight: '1.5' }}>
-              Funcionam todos os dias, geram rendimento e movem a economia — mas continuam invisíveis para o sistema financeiro.
+              Crie sua conta e transforme cada venda em um histórico financeiro que o sistema reconhece
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <button onClick={() => onNavigate('login')} style={{ backgroundColor: '#fff', color: 'var(--brand-blue)', border: 'none', padding: '18px 36px', borderRadius: '12px', fontWeight: '800', fontSize: '18px', cursor: 'pointer', boxShadow: '0 8px 16px rgba(0,0,0,0.15)', alignSelf: 'flex-start', display: 'flex', alignItems: 'center', gap: '8px' }}>
